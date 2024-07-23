@@ -39,8 +39,8 @@ function Login() {
                     placeholder="Enter Email"
                     name="email"
                     value={formData.email}
-                    onChange={handleChange}
-                />
+                    onChange={handleChange}/>
+
                 {error.email && <p className="error-message">{error.email}</p>}
 
                 <label>Password:</label>

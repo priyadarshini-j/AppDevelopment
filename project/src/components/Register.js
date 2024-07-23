@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import React, { useState } from "react";
+import '../assets/css/Register.css';
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,7 +14,7 @@ function Register() {
     email: "",
     password: "",
     confirmPassword: "",
-     phoneNumber:''
+    phoneNumber:''
   });
 
   const handleChange = (event) => {
@@ -51,7 +51,7 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
@@ -61,9 +61,9 @@ function Register() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          required
+  
         />
-        {error.name && <p style={{ color: "red" }}>{error.name}</p>}<br></br><br></br>
+        {error.name && <p className="error">{error.name}</p>}<br></br><br></br>
         
         <label>Email:</label>
         <input
@@ -73,7 +73,7 @@ function Register() {
           value={formData.email}
           onChange={handleChange}
         />
-        {error.email && <p style={{ color: "red" }}>{error.email}</p>}<br></br><br></br>
+        {error.email && <p className="error">{error.email}</p>}<br></br><br></br>
         
         <label>Password:</label>
         <input
@@ -83,7 +83,7 @@ function Register() {
           value={formData.password}
           onChange={handleChange}
         />
-        {error.password && <p style={{ color: "red" }}>{error.password}</p>}<br></br><br></br>
+        {error.password && <p className="error">{error.password}</p>}<br></br><br></br>
         
         <label>Confirm Password:</label>
         <input
@@ -93,16 +93,17 @@ function Register() {
           value={formData.confirmPassword}
           onChange={handleChange}
         />
-        {error.confirmPassword && <p style={{ color: "red" }}>{error.confirmPassword}</p>}<br></br><br></br>
+        {error.confirmPassword && <p className="error">{error.confirmPassword}</p>}<br></br><br></br>
+        
         <label>PhoneNumber:</label>
         <input
-          type="number"
+          type="text"
           placeholder="Enter Number"
           name="phoneNumber"
           value={formData.phoneNumber}
           onChange={handleChange}
         />
-        {error.phoneNumber && <p style={{ color: "red" }}>{error.phoneNumber}</p>}<br></br><br></br>
+        {error.phoneNumber && <p className="error">{error.phoneNumber}</p>}<br></br><br></br>
         
         <button type="submit">Register</button>
       </form>
