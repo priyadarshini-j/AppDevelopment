@@ -1,0 +1,23 @@
+
+.navbar-custom {
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .form-inline .form-control {
+    width: 400px;
+    margin-left:100px ;
+    border-color: rgb(104, 101, 101);
+  }
+  
+  .form-inline .btn-outline-danger {
+    margin-left: 500px;
+    margin-top: -65px;
+  }
+  .nav.link{
+    font-weight: bold;
+  }
