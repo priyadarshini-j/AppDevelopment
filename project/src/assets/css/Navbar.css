@@ -48,8 +48,22 @@ nav.navbar-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
 }
 
 nav.navbar-right > ul > li {
   margin: 0px 10px;
+
+}
+.login-icon{
+  cursor: pointer;
+  color: rgb(236, 81, 120);
+}
+.wishlist-icon{
+  cursor: pointer;
+  color: rgb(236, 81, 120);
+}
+.cart-icon{
+  cursor: pointer;
+  color: rgb(236, 81, 120);
 }

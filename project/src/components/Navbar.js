@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUserCircle, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaSignInAlt, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/Navbar.css'; // Assuming custom styles are added here
 import Logo from '../assets/images/toysLogo.png';
@@ -19,13 +19,16 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="nav-link" to="/">Brand</Link>
+            <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/categories">Categories</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/categories">Brand</Link>
+          </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               More
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,22 +47,28 @@ const Navbar = () => {
           <button type="submit" class="search-btn">Search</button>
         </form>
         <ul>
+        <li>
+            <Link to="/login">
+            
+              <FaSignInAlt size={30} className="login-icon" />
+            </Link>
+          </li>
           <li>
             <Link to="/wishlist">
               <FaHeart size={30} className="wishlist-icon" />
             </Link>
           </li>
           <li>
-            <Link to="/cart">
+            <Link to="/cartpage">
               <FaShoppingCart size={30} className="cart-icon" />
             </Link>
           </li>
           {/* <li style={{}}>Priyadharshini</li> */}
-          <li>
+          {/* <li>
             <Link to="/login">
               <FaUserCircle size={30} className="login-icon" />
             </Link>
-          </li>
+          </li> */}
           <UserPanel/>
         </ul>
       </nav>

@@ -23,7 +23,7 @@ const UserPanel = () => {
         profileIcon: {
             fontSize: "2rem",
             cursor: "pointer",
-            color: "black"
+            color: "rgb(236, 81, 120)"
         },
         dropdown: {
             display: dropdownVisible ? "block" : "none",
@@ -64,29 +64,6 @@ const UserPanel = () => {
                     onMouseLeave={() => setHoveredItem(null)}
                 >
                     Profile
-                </Link>
-                
-                <Link
-                    to="/wishlist"
-                    style={{
-                        ...styles.dropdownItem,
-                        ...(hoveredItem === 'wishlist' ? styles.hoveredDropdownItem : {})
-                    }}
-                    onMouseEnter={() => setHoveredItem('wishlist')}
-                    onMouseLeave={() => setHoveredItem(null)}
-                >
-                    Wishlist
-                </Link>
-                <Link
-                    to="/orders"
-                    style={{
-                        ...styles.dropdownItem,
-                        ...(hoveredItem === 'orders' ? styles.hoveredDropdownItem : {})
-                    }}
-                    onMouseEnter={() => setHoveredItem('orders')}
-                    onMouseLeave={() => setHoveredItem(null)}
-                >
-                    Orders
                 </Link>
                 <Link
                     to="/"

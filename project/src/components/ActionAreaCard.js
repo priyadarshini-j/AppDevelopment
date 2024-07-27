@@ -30,6 +30,7 @@ const CardGallery = () => {
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
     backgroundRepeat: 'no-repeat', 
+    marginTop:'50px',
    
   };
 

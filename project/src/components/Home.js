@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import toys1 from '../assets/images/toys1.jpg';
 import toys2 from '../assets/images/toys2.jpg';
 import toys3 from '../assets/images/toys3.jpg';
+import toys4 from '../assets/images/toys4.jpg';
 import action from '../assets/images/action.jpg';
 import educational from '../assets/images/kids-game.jpg';
 import outdoorToys from '../assets/images/outdoor-image.jpeg';
@@ -13,6 +14,7 @@ import offer2 from '../assets/images/offer2.jpg';
 import offer3 from '../assets/images/free-shipping.png';
 import MarqueeGrid from '../components/MarqueeGrid';
 import ActionAreaCard from '../components/ActionAreaCard';
+import CircleCard from '../components/CircleCard';
 
 
 const Home = () => {
@@ -31,7 +33,7 @@ const Home = () => {
     <div className="home">
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={toys1} alt="Toys" width="100%" height="450"/>
+          <img className="d-block w-100" src={toys4} alt="Toys" width="100%" height="450"/>
          
         </Carousel.Item>
         <Carousel.Item>
@@ -39,6 +41,9 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={toys3} alt="New York" width="100%" height="450" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={toys1} alt="New York" width="100%" height="450" />
         </Carousel.Item>
       </Carousel>
       <div className="offers">
@@ -61,6 +66,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <CircleCard/>
       <div className="categories">
         <h2>Toy Categories</h2>
         <div className="category-list">
@@ -81,11 +87,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
       <div className="marquee-section">
         <h2>Featured Toys</h2>
         <MarqueeGrid items={marqueeItems} />
       </div>
+      
       <ActionAreaCard/>
+      
     </div>
     
     
