@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import '../assets/css/Register.css';
 function Register() {
   const [formData, setFormData] = useState({
@@ -51,6 +52,7 @@ function Register() {
   };
 
   return (
+    <div className="register">
     <div className="container">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
@@ -107,6 +109,10 @@ function Register() {
         
         <button type="submit">Register</button>
       </form>
+      <div className="login-link">
+          <p>Already have an account? <Link to="/login">Login here</Link></p>
+        </div>
+    </div>
     </div>
   );
 }

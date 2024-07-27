@@ -1,13 +1,20 @@
-
+.register{
+    background-image: url("https://wallpapers.com/images/hd/baby-girl-pink-1300-x-904-qfpk7eds2o28gtnc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    padding: 50px;
+}
 .container {
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: -30px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #e68e8e;
+    background-color: #fdbbf2;
+    margin-right: 200px;
   }
   
   h1 {
@@ -33,7 +40,7 @@
   button {
     width: 100%;
     padding: 10px;
-    background-color: #07ad15;
+    background-color: #fa5989;
     border: none;
     border-radius: 5px;
     color: white;
@@ -42,7 +49,7 @@
   }
   
   button:hover {
-    background-color: #0f8a29;
+    background-color: #bd094e;
   }
   
   .error {
@@ -50,5 +57,21 @@
     margin-top: -5px;
     margin-bottom: -20px;
     font-size: 1.0em;
+  }
+  .login-link {
+    margin-top: 20px;
+  }
+  
+  .login-link p {
+    margin: 5px 0;
+  }
+  
+  .login-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
   }
   

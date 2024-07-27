@@ -6,12 +6,14 @@ import toys1 from '../assets/images/toys1.jpg';
 import toys2 from '../assets/images/toys2.jpg';
 import toys3 from '../assets/images/toys3.jpg';
 import action from '../assets/images/action.jpg';
-import educational from '../assets/images/educational.jpg';
-import outdoorToys from '../assets/images/outdoorToys.jpg';
+import educational from '../assets/images/kids-game.jpg';
+import outdoorToys from '../assets/images/outdoor-image.jpeg';
 import offer1 from '../assets/images/offer1.jpg';
 import offer2 from '../assets/images/offer2.jpg';
-import offer3 from '../assets/images/offer3.jpg';
+import offer3 from '../assets/images/free-shipping.png';
 import MarqueeGrid from '../components/MarqueeGrid';
+import ActionAreaCard from '../components/ActionAreaCard';
+
 
 const Home = () => {
   const marqueeItems = [
@@ -29,14 +31,14 @@ const Home = () => {
     <div className="home">
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={toys1} alt="Toys" width="1500" height="600"/>
+          <img className="d-block w-100" src={toys1} alt="Toys" width="100%" height="450"/>
          
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src={toys2} alt="Chicago"  width="1500" height="600" />
+          <img className="d-block w-100" src={toys2} alt="Chicago"  width="100%" height="450" />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src={toys3} alt="New York" width="1500" height="600" />
+          <img className="d-block w-100" src={toys3} alt="New York" width="100%" height="450" />
         </Carousel.Item>
       </Carousel>
       <div className="offers">
@@ -83,6 +85,7 @@ const Home = () => {
         <h2>Featured Toys</h2>
         <MarqueeGrid items={marqueeItems} />
       </div>
+      <ActionAreaCard/>
     </div>
     
     

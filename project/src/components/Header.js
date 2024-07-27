@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaUserCircle, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import '../assets/css/Header.css';
 import Logo from '../assets/images/logo.jpg';
 
@@ -13,13 +13,19 @@ const Header = () => {
       <h1>Toys Haven</h1>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          {/* <li><Link to="/login">Login</Link></li> */}
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+        <li>
+            <Link to="/wishlist">
+              <FaHeart size={30} className="wishlist-icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart">
+              <FaShoppingCart size={30} className="cart-icon" />
+            </Link>
+          </li>
           <li>
             <Link to="/login">
-              <FaUserCircle size={30} className="login-icon" /> {/* Login icon with link */}
+              <FaUserCircle size={30} className="login-icon" /> 
             </Link>
           </li>
         </ul>

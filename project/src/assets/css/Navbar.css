@@ -2,22 +2,54 @@
 .navbar-custom {
     background-color: #f8f9fa;
     padding: 10px;
+    display: flex;
+    align-items: end;
+    padding-top: 0px;
   }
   
   .navbar-brand {
     font-weight: bold;
-  }
+  } 
   
-  .form-inline .form-control {
-    width: 400px;
-    margin-left:100px ;
-    border-color: rgb(104, 101, 101);
-  }
   
-  .form-inline .btn-outline-danger {
-    margin-left: 500px;
-    margin-top: -65px;
-  }
+  form.header-search {
+    display: flex;
+    align-items: center;
+}
+
+input.search-input {
+  width: 407px;
+}
+
+button.search-btn {
+  width: auto;
+  padding: 7px 28px;
+  margin-left: 20px;
+}
+
   .nav.link{
     font-weight: bold;
   }
+
+  .header-logo > img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+nav.navbar-right > ul {
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: unset;
+}
+
+nav.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav.navbar-right > ul > li {
+  margin: 0px 10px;
+}

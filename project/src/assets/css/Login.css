@@ -1,14 +1,22 @@
-
+.login{
+    background-image: url("https://wallpapers.com/images/hd/baby-girl-pink-1300-x-904-qfpk7eds2o28gtnc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding: 50px;
+    
+}
 .login-container {
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 40px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(36, 35, 35, 0.1);
-    background-color: #e68e8e;
+    background-color: #fcccf9;
+    margin-right: 200px;
 }
 
 .login-title {
@@ -50,3 +58,23 @@
     margin-bottom: 10px;
     font-size: 1.0em;
 }
+.login-icon {
+    margin-left: auto;
+
+}
+.login-footer {
+    margin-top: 20px;
+  }
+  
+  .login-footer p {
+    margin: 5px 0;
+  }
+  
+  .login a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-footer a:hover {
+    text-decoration: underline;
+  }

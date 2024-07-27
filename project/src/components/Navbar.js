@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserCircle, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/Navbar.css'; // Assuming custom styles are added here
+import Logo from '../assets/images/toysLogo.png';
+import UserPanel from './UserPanel';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
-      <a className="navbar-brand" href="#">Toy Haven</a>
+      <div className="header-logo">
+        <img src={Logo} />
+      </div>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -31,11 +36,33 @@ const Navbar = () => {
             </div>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" width="50"/>
-        <button type="submit" class="btn btn-outline-danger">Search</button>
-        </form>
+
       </div>
+      <nav className='navbar-right'>
+        <form className="header-search">
+          <input class="search-input" type="search" placeholder="Search" aria-label="Search" width="50" />
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+        <ul>
+          <li>
+            <Link to="/wishlist">
+              <FaHeart size={30} className="wishlist-icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart">
+              <FaShoppingCart size={30} className="cart-icon" />
+            </Link>
+          </li>
+          {/* <li style={{}}>Priyadharshini</li> */}
+          <li>
+            <Link to="/login">
+              <FaUserCircle size={30} className="login-icon" />
+            </Link>
+          </li>
+          <UserPanel/>
+        </ul>
+      </nav>
     </nav>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../assets/css/Login.css';
 function Login() {
     const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ function Login() {
         email: "",
         password: "",
     });
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -25,11 +27,17 @@ function Login() {
         if (formData.password.trim() === "") {
             formErrors.password = "Enter Password";
         }
+        if (Object.keys(formErrors).length === 0) {
+            navigate('/');
+        } else {
+            setError(formErrors);
+        }
         setError(formErrors);
         console.log(formData);
     };
 
     return (
+        <div className='login'>
         <div className="login-container">
             <h1 className="login-title">Login</h1>
             <form onSubmit={handleSubmit} className="login-form">
@@ -53,8 +61,13 @@ function Login() {
                 /><br></br>
                 {error.password && <p className="error-message">{error.password}</p>}<br></br>
 
+                    <p><a href="/forgot-password">Forgot Password?</a></p>
                 <button type="submit">Login</button>
             </form>
+            <div className="login-footer">
+                    <p>Don't have an account? <a href="/Register">Sign Up</a></p>
+                </div>
+        </div>
         </div>
     );
 }
