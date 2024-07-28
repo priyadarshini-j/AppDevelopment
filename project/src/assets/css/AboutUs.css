@@ -1,0 +1,72 @@
+/* AboutUs.css */
+.about-us {
+    padding: 100px;
+    background-color: #fdbebe;
+  }
+  
+  .about-us h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-section, .mission-section, .vision-section, .values-section, .team-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fae8e8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-section h2, .mission-section h2, .vision-section h2, .values-section h2, .team-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-section p, .mission-section p, .vision-section p, .values-section ul, .values-section li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .values-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .values-section li {
+    margin-bottom: 10px;
+  }
+  
+  .team-section .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .team-member {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .team-member h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+  }
+  
+  .team-member p {
+    font-size: 16px;
+    color: #777;
+  }
+  

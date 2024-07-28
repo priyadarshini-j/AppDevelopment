@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import '../assets/css/Footer.css';
 
 const Footer = () => {
@@ -8,18 +9,49 @@ const Footer = () => {
         <div className="footer-section links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/contactus">Contact</a></li>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
           </ul>
         </div>
         <div className="footer-section social">
           <h4>Follow Us</h4>
           <ul>
-            <li><a href="https://facebook.com">Facebook</a></li>
+            {/* <li><a href="https://facebook.com">Facebook</a></li>
             <li><a href="https://twitter.com">Twitter</a></li>
-            <li><a href="https://instagram.com">Instagram</a></li>
+            <li><a href="https://instagram.com">Instagram</a></li> */}
+            {/* <li><a href="https://facebook.com" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a></li> */}
+            <li>
+            <a
+                className="social-btn"
+                style={{ backgroundColor: 'black',fontSize:'25px',borderRadius:'50%' }}
+                href="https://facebook.com"
+                aria-label="Facebook"
+              >
+                <FaFacebookF />
+              </a>
+              </li>
+            <li>
+            <a
+                className="social-btn"
+                style={{ backgroundColor: 'black',fontSize:'25px',borderRadius:'50%' }}
+                href="https://instagram.com"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              </li>
+            <li>
+            <a
+                className="social-btn"
+                style={{ backgroundColor: 'black',fontSize:'25px',borderRadius:'50%' }}
+                href="https://twitter.com"
+                aria-label="Twitter"
+              >
+                <FaTwitter />
+              </a>
+              </li>
+            
           </ul>
         </div>
         <div className="footer-section contact">

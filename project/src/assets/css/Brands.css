@@ -1,0 +1,90 @@
+
+  .brands-page {
+    text-align: center;
+    padding: 20px;
+    background-color: pink;
+  }
+  
+  .brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    gap: 30px;
+    cursor: pointer;
+  }
+  
+  .brand-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .extra-cards {
+    margin-top: 40px;
+  }
+  
+  .extra-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .extra-card {
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1dcdc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .extra-card-image {
+    width: 150px; /* Fixed width for extra card images */
+    height: 150px; /* Fixed height for extra card images */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the entire area */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  .extra-buy-now-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .extra-buy-now-button:hover {
+    background-color: #218838;
+  }
+  

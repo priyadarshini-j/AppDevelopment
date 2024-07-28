@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSignInAlt, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../assets/css/Navbar.css'; // Assuming custom styles are added here
 import Logo from '../assets/images/toysLogo.png';
 import UserPanel from './UserPanel';
 
+
 const Navbar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const Search = `brands`;
+    window.location.href = Search;
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
       <div className="header-logo">
@@ -25,25 +34,15 @@ const Navbar = () => {
             <Link className="nav-link" to="/categories">Categories</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/categories">Brand</Link>
-          </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              More
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to="/action">Action</Link>
-              <Link className="dropdown-item" to="/another-action">Another action</Link>
-              <div className="dropdown-divider"></div>
-              <Link className="dropdown-item" to="/something-else">Something else here</Link>
-            </div>
+            <Link className="nav-link" to="/brands">Brand</Link>
           </li>
         </ul>
 
       </div>
       <nav className='navbar-right'>
-        <form className="header-search">
-          <input class="search-input" type="search" placeholder="Search" aria-label="Search" width="50" />
+        <form className="header-search" onSubmit={handleSearch}>
+          <input class="search-input" type="search" placeholder="Search" aria-label="Search" value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} width="50" />
           <button type="submit" class="search-btn">Search</button>
         </form>
         <ul>

@@ -1,0 +1,70 @@
+.payment{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/007/109/non_2x/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-pink-backgroud-for-banner-market-ecommerce-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    
+}
+.payment-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f7a5a5;
+    margin-left: 10px;
+  }
+  
+  .payment-container main {
+    text-align: center;
+  }
+  
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .payment-form-group-field {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .payment-form-group-field .form-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .payment-form-group-field .form-field:last-child {
+    margin-right: 0;
+  }
+  
+  button.btn-danger {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  

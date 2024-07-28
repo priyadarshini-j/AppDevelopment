@@ -52,6 +52,7 @@
   .footer-section ul li a {
     color: #fff;
     text-decoration: none;
+    
   }
   
   .footer-section ul li a:hover {
@@ -63,4 +64,5 @@
     border-top: 1px solid #444;
     padding-top: 10px;
   }
+  
   
