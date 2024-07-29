@@ -29,7 +29,7 @@ const CartPage = () => {
           style={buttonStyle}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
-          onClick={() => window.location.href = '/'}
+          onClick={() => window.location.href = '/categories'}
         >
           Continue Shopping
         </button>

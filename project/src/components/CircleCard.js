@@ -52,27 +52,27 @@ const CircleCardGallery = () => {
       <CircleCard
         image="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-category/17132531250-18months.webp"
         alt="Product 1"
-        link="/link-1"
+        link="/categories"
       />
       <CircleCard
         image="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-category/171326020518-36months.webp"
         alt="Product 2"
-        link="/link-2"
+         link="/categories"
       />
       <CircleCard
         image="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-category/171334204812_years(1).webp"
         alt="Product 3"
-        link="/link-3"
+        link="/categories"
       />
       <CircleCard
         image="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-category/17132705845-7years.webp"
         alt="Product 3"
-        link="/link-3"
+        link="/categories"
       />
       <CircleCard
         image="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-category/17133425769-12years.webp"
         alt="Product 4"
-        link="/link-4"
+        link="/categories"
       />
     </div>
   );

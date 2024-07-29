@@ -15,6 +15,7 @@ import Categories from './components/Categories';
 import { AuthProvider } from './components/AuthContext';
 import Brands from './components/Brands';
 import PaymentPage from './components/PaymentPage';
+import UserDashboard from './components/UserDashboard';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/categories" element={<Categories/>} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/paymentpage" element={<PaymentPage />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
       </Routes>
       
       <Footer />

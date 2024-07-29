@@ -17,10 +17,6 @@ const Footer = () => {
         <div className="footer-section social">
           <h4>Follow Us</h4>
           <ul>
-            {/* <li><a href="https://facebook.com">Facebook</a></li>
-            <li><a href="https://twitter.com">Twitter</a></li>
-            <li><a href="https://instagram.com">Instagram</a></li> */}
-            {/* <li><a href="https://facebook.com" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a></li> */}
             <li>
             <a
                 className="social-btn"

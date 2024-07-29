@@ -35,6 +35,9 @@ function Login() {
       if (formData.email === "priya@gmail.com" && formData.password === "priya123") {
         login();
         navigate('/categories');
+      }  else if (formData.email === "admin@gmail.com" && formData.password === "admin123") {
+        login();
+        navigate('/admin'); // Navigate to admin dashboard
       } else {
         formErrors.general = "Incorrect email or password";
       }

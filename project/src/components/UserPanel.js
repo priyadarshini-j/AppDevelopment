@@ -55,7 +55,7 @@ const UserPanel = () => {
             <FaUserCircle style={styles.profileIcon} onClick={toggleDropdown} />
             <div style={styles.dropdown}>
                 <Link
-                    to="/profile"
+                    to="/UserDashboard"
                     style={{
                         ...styles.dropdownItem,
                         ...(hoveredItem === 'profile' ? styles.hoveredDropdownItem : {})
