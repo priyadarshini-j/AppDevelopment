@@ -29,7 +29,7 @@ function AdminDashboard() {
         return <OrderDetails />;
       // Add more cases as needed
       default:
-        return <Users />;
+        return <Users/>;
     }
   };
 
@@ -41,9 +41,9 @@ function AdminDashboard() {
           <h2>Priyadharshini</h2>
         </div>
         <ul>
-          <li><Link to="#" onClick={() => setActiveComponent('users')}>Total Users</Link></li>
-          <li><Link to="#" onClick={() => setActiveComponent('bichart')}>BI Chart</Link></li>
-          <li><Link to="#" onClick={() => setActiveComponent('orderdetails')}>Order Details</Link></li>
+          <li><Link to="#" onClick={() => setActiveComponent('users')}>Users List</Link></li>
+          <li><Link to="#" onClick={() => setActiveComponent('bichart')}>Reports</Link></li>
+          <li><Link to="#" onClick={() => setActiveComponent('orderdetails')}>Sales</Link></li>
         </ul>
         <button onClick={handleLogout} className="logout-button">Logout</button>
       </div>
