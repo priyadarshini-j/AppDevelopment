@@ -16,6 +16,10 @@ import { AuthProvider } from './components/AuthContext';
 import Brands from './components/Brands';
 import PaymentPage from './components/PaymentPage';
 import UserDashboard from './components/UserDashboard';
+import AdminDashboard from './components/AdminDashboard';
+import Users from './components/Users';
+import OrderDetails from './components/OrderDetails';
+import BIChart from './components/BIChart';
 
 const App = () => {
   return (
@@ -31,11 +35,15 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/contactus" element={<ContactUs/>} />
         <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
-        
+
         <Route path="/categories" element={<Categories/>} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/paymentpage" element={<PaymentPage />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/orderdetails" element={<OrderDetails />} />
+        <Route path="/bichart" element={<BIChart />} />
       </Routes>
       
       <Footer />
