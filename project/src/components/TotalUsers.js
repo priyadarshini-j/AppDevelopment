@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Users() {
+function TotalUsers() {
   const styles = {
     container: {
       padding: '20px',
@@ -64,4 +64,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default TotalUsers;

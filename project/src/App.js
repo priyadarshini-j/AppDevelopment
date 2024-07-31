@@ -17,7 +17,7 @@ import Brands from './components/Brands';
 import PaymentPage from './components/PaymentPage';
 import UserDashboard from './components/UserDashboard';
 import AdminDashboard from './components/AdminDashboard';
-import Users from './components/Users';
+import TotalUsers from './components/TotalUsers';
 import OrderDetails from './components/OrderDetails';
 import BIChart from './components/BIChart';
 
@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/paymentpage" element={<PaymentPage />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route path="/users" element={<Users />} />
+        <Route path="/totalusers" element={<TotalUsers />} />
         <Route path="/orderdetails" element={<OrderDetails />} />
         <Route path="/bichart" element={<BIChart />} />
       </Routes>
