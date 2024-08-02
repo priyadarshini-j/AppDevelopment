@@ -1,0 +1,46 @@
+.feedback-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f7d8e4;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .rating-stars {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .star {
+    font-size: 30px;
+  }
+  
+  .filled {
+    color: gold;
+  }
+  
+  select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-button {
+    background-color: #fd1394;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #f80c5b;
+  }
+  

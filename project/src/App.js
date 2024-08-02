@@ -20,6 +20,8 @@ import AdminDashboard from './components/AdminDashboard';
 import TotalUsers from './components/TotalUsers';
 import OrderDetails from './components/OrderDetails';
 import BIChart from './components/BIChart';
+import FeedbackForm from './components/FeedbackForm';
+
 
 const App = () => {
   return (
@@ -44,6 +46,8 @@ const App = () => {
         <Route path="/totalusers" element={<TotalUsers />} />
         <Route path="/orderdetails" element={<OrderDetails />} />
         <Route path="/bichart" element={<BIChart />} />
+        <Route path="/feedbackform" element={<FeedbackForm />} />
+        
       </Routes>
       
       <Footer />

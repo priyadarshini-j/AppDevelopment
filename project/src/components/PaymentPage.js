@@ -17,8 +17,8 @@ const PaymentPage = () => {
       cardCvv === '123' &&
       expiryDate === '04/2024'
     ) {
-        alert('Your Payment will be successful');
-        window.location.href="/";
+        alert('Your Payment successfully Submitted');
+        window.location.href="/feedbackform";
     } else {
         alert('Payment failed. Please check your details and try again.');
     }
