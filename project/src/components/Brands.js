@@ -70,7 +70,7 @@ const extraCards = [
     const handleBuyNow = (brandName) => {
       if (isLoggedIn) {
         alert(`Proceeding to buy ${brandName}`);
-        window.location.href="/paymentpage";
+        window.location.href="/addresspage";
         // Redirect to buy now page or add your buy now logic here
       } else {
         alert('Please log in to buy this item.');

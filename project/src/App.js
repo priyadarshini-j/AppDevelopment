@@ -21,6 +21,7 @@ import TotalUsers from './components/TotalUsers';
 import OrderDetails from './components/OrderDetails';
 import BIChart from './components/BIChart';
 import FeedbackForm from './components/FeedbackForm';
+import AddressPage from './components/AddressPage';
 
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/orderdetails" element={<OrderDetails />} />
         <Route path="/bichart" element={<BIChart />} />
         <Route path="/feedbackform" element={<FeedbackForm />} />
+        <Route path="/addresspage" element={<AddressPage />} />
         
       </Routes>
       

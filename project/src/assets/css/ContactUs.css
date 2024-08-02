@@ -8,6 +8,7 @@ main {
     flex-direction: column;
     padding: 20px;
     background-color: pink;
+    height: 100%;
     
   }
   
@@ -19,6 +20,7 @@ main {
     padding: 20px;
     margin-bottom: 20px;
     width: 80%;
+    height: 100%;
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;

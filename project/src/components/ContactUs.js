@@ -2,38 +2,38 @@ import React, { useState } from 'react';
 import '../assets/css/ContactUs.css'; // Ensure you have this CSS file for styling
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    usr: '',
-    mail: '',
-    phone: '',
-    address: '',
-    message: ''
-  });
+  // const [formData, setFormData] = useState({
+  //   usr: '',
+  //   mail: '',
+  //   phone: '',
+  //   address: '',
+  //   message: ''
+  // });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value
+  //   });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { usr, mail, address } = formData;
-    if (usr === "priya" && mail === "priya@gmail.com" && address === "villupuram") {
-      alert(`Thank you for contacting us, ${usr}! We will get back to you soon.`);
-      setFormData({
-        usr: '',
-        mail: '',
-        phone: '',
-        address: '',
-        message: ''
-      });
-    } else {
-      alert('Please fill out all fields correctly.');
-    }
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { usr, mail, address } = formData;
+  //   if (usr === "priya" && mail === "priya@gmail.com" && address === "villupuram") {
+  //     alert(`Thank you for contacting us, ${usr}! We will get back to you soon.`);
+  //     setFormData({
+  //       usr: '',
+  //       mail: '',
+  //       phone: '',
+  //       address: '',
+  //       message: ''
+  //     });
+  //   } else {
+  //     alert('Please fill out all fields correctly.');
+  //   }
+  // };
 
   return (
     <div>
@@ -44,7 +44,7 @@ const ContactUs = () => {
           <p>Phone: +91 81488-47753</p>
           <p>Address: 143 Main St, Chennai, India</p>
         </section>
-        <section className="contact-form">
+        {/* <section className="contact-form">
           <h2>Contact Information</h2>
           <form id="contactForm" onSubmit={handleSubmit}>
             <label htmlFor="usr">UserName:</label>
@@ -99,7 +99,7 @@ const ContactUs = () => {
             ></textarea>
             <button type="submit" className="btn btn-success">Submit</button>
           </form>
-        </section>
+        </section> */}
       </main>
     </div>
   );
