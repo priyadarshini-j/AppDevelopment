@@ -1,0 +1,64 @@
+.toy-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .wishlist-icon-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .add-to-wishlist-icon {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .add-to-wishlist-icon.in-wishlist {
+    color: #e46081;
+  }
+  
+  .toy-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .toy-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .buy-now-btn,
+  .add-to-cart-btn {
+    background-color: #e46081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .buy-now-btn:hover,
+  .add-to-cart-btn:hover {
+    background-color: #c13f63;
+  }
+  

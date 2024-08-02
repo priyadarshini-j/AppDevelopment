@@ -3,11 +3,16 @@ import { FaStar, FaHeart } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { useCart } from '../components/CartContext'; // Adjust the path as necessary
 import { useAuth } from '../components/AuthContext'; // Adjust the path as necessary
+import { useWishlist } from '../components/WishlistContext'; // Adjust the path as necessary
+import '../assets/css/ToyCard.css'; // Adjust the path as necessary
 
-const ToyCard = ({ toy, onAddToWishlist }) => {
+const ToyCard = ({ toy }) => {
   const { addToCart } = useCart();
   const { isLoggedIn } = useAuth();
-  const [isInWishlist, setIsInWishlist] = useState(false);
+  const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist();
+  const [isInWishlist, setIsInWishlist] = useState(
+    wishlistItems.some(item => item.id === toy.id)
+  );
 
   const handleBuyNow = () => {
     if (isLoggedIn) {
@@ -20,15 +25,26 @@ const ToyCard = ({ toy, onAddToWishlist }) => {
 
   const handleAddToCart = () => {
     addToCart(toy);
+    alert('Item added to cart');
   };
 
   const handleAddToWishlist = () => {
+    if (isInWishlist) {
+      removeFromWishlist(toy.id);
+    } else {
+      addToWishlist(toy);
+    }
     setIsInWishlist(!isInWishlist);
-    onAddToWishlist(toy);
   };
 
   return (
     <div className="toy-card">
+      <div className="wishlist-icon-container">
+        <FaHeart 
+          className={`add-to-wishlist-icon ${isInWishlist ? 'in-wishlist' : ''}`} 
+          onClick={handleAddToWishlist} 
+        />
+      </div>
       <img src={toy.image} alt={toy.name} className="toy-image" />
       <h3>{toy.name}</h3>
       <p>{toy.description}</p>
@@ -42,12 +58,6 @@ const ToyCard = ({ toy, onAddToWishlist }) => {
       <div className="toy-actions">
         <button className="buy-now-btn" onClick={handleBuyNow}>Buy Now</button>
         <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
-        <button 
-          className={`add-to-wishlist-btn ${isInWishlist ? 'in-wishlist' : ''}`} 
-          onClick={handleAddToWishlist}
-        >
-          <FaHeart />
-        </button>
       </div>
     </div>
   );
@@ -61,8 +71,7 @@ ToyCard.propTypes = {
     image: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired
-  }).isRequired,
-  onAddToWishlist: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default ToyCard;

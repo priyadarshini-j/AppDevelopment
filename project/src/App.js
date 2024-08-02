@@ -22,11 +22,13 @@ import OrderDetails from './components/OrderDetails';
 import BIChart from './components/BIChart';
 import FeedbackForm from './components/FeedbackForm';
 import AddressPage from './components/AddressPage';
+import {WishlistProvider} from './components/WishlistContext';
 
 
 const App = () => {
   return (
     <AuthProvider>
+       <WishlistProvider>
     <Router>
       <Navbar/>
       <Routes>
@@ -54,6 +56,7 @@ const App = () => {
       
       <Footer />
     </Router>
+    </WishlistProvider>
     </AuthProvider>
   );
 };

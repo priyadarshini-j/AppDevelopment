@@ -1,60 +1,80 @@
+.page-container {
+  padding: 20px;
+}
 
-.wishlist {
-    padding: 20px;
-    background-color: #fac2c7;
-  }
-  
-  .wishlist h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .wishlist-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .wishlist-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  .wishlist-item-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .wishlist-item-details {
-    margin-top: 10px;
-  }
-  
-  .wishlist-item-details h2 {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .wishlist-item-details p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .remove-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    
-  }
-  
-  .remove-btn:hover {
-    background-color: #ff1a1a;
-  }
-  
+.wishlist-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wishlist-items {
+  width: 100%;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.wishlist-item-image {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.wishlist-item-details {
+  flex-grow: 1;
+}
+
+.wishlist-item-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button,
+.buy-now-button {
+  background-color: #e46081;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 10px;
+}
+
+.button:hover,
+.buy-now-button:hover {
+  background-color: #c13f63;
+}
+
+.clear-wishlist-button,
+.continue-shopping-button {
+  background-color: #e46081;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 20px;
+}
+
+.clear-wishlist-button:hover,
+.continue-shopping-button:hover {
+  background-color: #c13f63;
+}
