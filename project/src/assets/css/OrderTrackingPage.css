@@ -1,0 +1,49 @@
+.order-tracking-page {
+    padding: 20px;
+    background-color: #ffe6f2; /* Light pink background */
+    font-family: Arial, sans-serif;
+  }
+  
+  .order-tracking-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff69b4; /* Hot pink */
+  }
+  
+  .order-tracking-page ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-tracking-page li {
+    border: 1px solid #ff69b4; /* Hot pink border */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background for list items */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .order-tracking-page h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #ff69b4; /* Hot pink */
+  }
+  
+  .order-tracking-page h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    color: #ff69b4; /* Hot pink */
+  }
+  
+  .order-tracking-page p {
+    margin: 5px 0;
+  }
+  
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  

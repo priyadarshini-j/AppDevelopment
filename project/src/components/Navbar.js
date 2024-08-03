@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaSignInAlt, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaSignInAlt, FaHeart, FaShoppingCart ,FaTruck} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../assets/css/Navbar.css'; // Assuming custom styles are added here
@@ -50,6 +50,11 @@ const Navbar = () => {
             <Link to="/login">
             
               <FaSignInAlt size={30} className="login-icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/ordertrackingpage">
+              <FaTruck size={30} className="order-tracking-icon" />
             </Link>
           </li>
           <li>
