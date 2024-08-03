@@ -53,7 +53,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/ordertrackingpage">
+            <Link to="/orderdetail">
               <FaTruck size={30} className="order-tracking-icon" />
             </Link>
           </li>

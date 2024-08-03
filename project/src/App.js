@@ -23,7 +23,8 @@ import BIChart from './components/BIChart';
 import FeedbackForm from './components/FeedbackForm';
 import AddressPage from './components/AddressPage';
 import {WishlistProvider} from './components/WishlistContext';
-import OrderTrackingPage from './components/OrderTrackingPage';
+import OrderDetail from './components/OrderDetail';
+import DeliveryTracking from './components/DeliveryTracking';
 
 
 const App = () => {
@@ -52,7 +53,8 @@ const App = () => {
         <Route path="/bichart" element={<BIChart />} />
         <Route path="/feedbackform" element={<FeedbackForm />} />
         <Route path="/addresspage" element={<AddressPage />} />
-        <Route path="/ordertrackingpage" element={<OrderTrackingPage />} />
+        <Route path="/orderdetail" element={<OrderDetail />} />
+        <Route path="/deliverytracking" element={<DeliveryTracking />} />
         
       </Routes>
       
