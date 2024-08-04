@@ -1,6 +1,8 @@
 package com.example.backend.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -81,5 +83,25 @@ public class Payment {
     public void setBuy(Buy buy) {
         this.buy = buy;
     }
+
+    ///payment to order
+    @OneToOne(mappedBy = "payment",cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private Orders orders;
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
+    }
+
+    
+    
+       
+
+
+
     
 }
