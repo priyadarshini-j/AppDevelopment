@@ -23,18 +23,18 @@ import com.example.backend.service.AddWishService;
 public class AddWishController {
     @Autowired
     AddWishService as;
-    @PostMapping("/post/categorytype")
+    @PostMapping("/post/addwish")
     public ResponseEntity<AddWish>addelements(@RequestBody AddWish a)
     {
         AddWish ast=as.create(a);
         return new ResponseEntity<>(ast,HttpStatus.CREATED);
     }
-    @GetMapping("/get/categorytype")
+    @GetMapping("/get/addwish")
     public ResponseEntity<List<AddWish>> showinfo()
     {
         return new ResponseEntity<>(as.getAll(),HttpStatus.OK);
     }
-    @GetMapping("/get/categorytype/{cid}")
+    @GetMapping("/get/addwish/{cid}")
     public ResponseEntity<AddWish> getById(@PathVariable Integer cid)
     {
         AddWish obj=as.getId(cid);
