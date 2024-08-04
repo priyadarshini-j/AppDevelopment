@@ -1,7 +1,13 @@
 package com.example.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Buy {
@@ -82,4 +88,33 @@ public class Buy {
     public void setState(String state) {
         this.state = state;
     }
+    //product to buy
+   @OneToOne
+    @JsonBackReference
+    @JoinColumn(name = "product_id", referencedColumnName = "productId", nullable = false)
+    private Product product;
+
+public Product getProduct() {
+    return product;
+}
+
+public void setProduct(Product product) {
+    this.product = product;
+}
+
+        // Buy to Payment relationship
+        @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)
+        @JsonManagedReference
+        private Payment payment;
+    
+        public Payment getPayment() {
+            return payment;
+        }
+    
+        public void setPayment(Payment payment) {
+            this.payment = payment;
+        }
+    
+
+    
 }
