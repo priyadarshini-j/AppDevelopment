@@ -1,0 +1,50 @@
+/* OrderDetail.css */
+.order-details {
+  background-color: #f8d2e1;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.delivery-address,
+.product-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-address h3 {
+  color: #ff69b4;
+}
+
+.download-button,
+.review-button,
+.chat-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-title {
+  color: #ff69b4;
+}
+
+.offers-applied {
+  color: #ff69b4;
+}
+
