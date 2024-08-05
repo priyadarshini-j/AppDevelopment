@@ -1,6 +1,7 @@
 package com.example.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -105,6 +106,7 @@ public void setProduct(Product product) {
         // Buy to Payment relationship
         @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)
         @JsonManagedReference
+        @JsonIgnore
         private Payment payment;
     
         public Payment getPayment() {
