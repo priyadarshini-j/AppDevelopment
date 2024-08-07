@@ -1,0 +1,54 @@
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background-image:url("https://img.freepik.com/free-vector/toy-store-game-interior-vector-cartoon-background_107791-21042.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    margin-bottom: 70px;
+  }
+
+  .marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .marquee-content {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .marquee-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 15px;
+  }
+  
+  .marquee-item img {
+    width: 130px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    background: white;
+    padding: 10px;
+  }
+  
+  .marquee-item p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    color:rgb(66, 2, 2);
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

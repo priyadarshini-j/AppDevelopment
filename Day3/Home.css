@@ -1,0 +1,116 @@
+.home {
+    color: rgb(180, 68, 68);
+    padding: 2em;
+    text-align: center;
+    /* background-image: url("../images/home1.jpg"); */
+    background-color: rgb(252, 205, 213);
+    background-repeat: no-repeat;
+    background-size: cover;  }
+  
+  .home h2 {
+    margin: 0;
+  }
+  /* .offers {
+    margin: 20px;
+    padding: 20px;
+     background-color: #f3ddde; 
+    border-radius: 8px;
+  }  */
+  
+  .offers h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .offer-list {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    
+    gap: 20px;
+  }
+  .offer-item img {
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .offer-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:50px;
+  }
+  
+  .offer-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .offer-item p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .categories {
+    margin: 20px;
+    padding: 20px;
+    /* background-color: #f55e98; */
+    border-radius: 8px;
+  }
+  
+  .categories h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .category-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .category-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .category-item img {
+    object-fit: contain;
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .category-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .category-item p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .marquee-section h2{
+   margin-bottom: 20px;
+  }
+  
+  
