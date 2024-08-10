@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.model.AddWish;
@@ -20,10 +21,11 @@ import com.example.backend.service.AddWishService;
 
 
 @RestController
+@RequestMapping("/api/addwish")
 public class AddWishController {
     @Autowired
     AddWishService as;
-    @PostMapping("/post/addwish")
+    @PostMapping
     public ResponseEntity<AddWish>addelements(@RequestBody AddWish a)
     {
         AddWish ast=as.create(a);

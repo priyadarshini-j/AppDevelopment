@@ -47,7 +47,8 @@ public class SecurityConfig {
                                                 request -> request.requestMatchers(
                                                                 "/api/users/createUser",
                                                                 "/api/auth/home",
-                                                                "/api/auth/authenticate").permitAll())
+                                                                "/api/auth/authenticate",
+                                                                "/api/addwish").permitAll())
                                 .authorizeHttpRequests(request -> request
                                                 .requestMatchers(
                                                                 "/v3/api-docs/**",
@@ -59,7 +60,9 @@ public class SecurityConfig {
                                                                 "/api/users/**",
                                                                 "/api/auth/**",
                                                                 "/api/products/**",
-                                                                "/api/buy/**")
+                                                                "/api/buy/**",
+                                                                "/api/orders/**",
+                                                                "/api/payment/**")
                                                 .authenticated())
                                 .sessionManagement(session -> session
                                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -66,7 +66,7 @@ const UserPanel = () => {
                     Profile
                 </Link>
                 <Link
-                    to="/categories"
+                    to="/login"
                     style={{
                         ...styles.dropdownItem,
                         ...(hoveredItem === 'logout' ? styles.hoveredDropdownItem : {})

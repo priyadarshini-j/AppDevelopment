@@ -5,22 +5,29 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 @Entity
 
 public class User {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int uid;
+    private String name;
+    @Column(unique=true)
     private String email;
     private String password;
     private String roles;
     public User() {
     }
 
-    public User(int uid, String email, String password,String roles) {
+    public User(int uid,String name, String email, String password,String roles) {
         this.uid = uid;
+        this.name=name;
         this.email = email;
         this.password = password;
         this.roles=roles;
@@ -32,6 +39,15 @@ public class User {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -72,7 +88,8 @@ public class User {
     // }
 
 
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<AddWish> addWish = new ArrayList<>();
     
     
 }

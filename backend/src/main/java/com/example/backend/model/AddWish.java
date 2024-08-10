@@ -1,14 +1,29 @@
 package com.example.backend.model;
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 @Entity
 public class AddWish {
     @Id
     private int cid;
     private String categoryType;
+
+@ManyToOne
+@JoinColumn(name = "user_id")
+@JsonManagedReference
+private User user;
+
+
+@ManyToOne
+@JoinColumn(name = "product_id")
+@JsonManagedReference
+private Product product;
+//@JsonIgnore
+
+
     public AddWish() {
     }
     public AddWish(int cid, String categoryType) {
@@ -29,5 +44,5 @@ public class AddWish {
     }
     
 
-    
+     
 }

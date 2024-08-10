@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/Login.css';
 import { useAuth } from './AuthContext';
+import axios from "axios";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ function Login() {
     setError({ ...error, [name]: "" });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     const formErrors = {};
     if (formData.email.trim() === "") {
@@ -30,18 +31,23 @@ function Login() {
     if (formData.password.trim() === "") {
       formErrors.password = "Enter Password";
     }
-
-    if (Object.keys(formErrors).length === 0) {
-      if (formData.email === "priya@gmail.com" && formData.password === "priya123") {
-        login();
-        navigate('/categories');
-      }  else if (formData.email === "admin@gmail.com" && formData.password === "admin123") {
-        login();
-        navigate('/admindashboard'); // Navigate to admin dashboard
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8080/api/auth/authenticate",
+        formData
+      );
+      console.log(response);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("role", response.data.role);
+      const role = response.data.role;
+      if (role === "ADMIN") {
+        navigate("/admindashboard");
       } else {
-        formErrors.general = "Incorrect email or password";
+        navigate("/categories");
       }
-    } 
+    } catch (error) {
+      console.error(error);
+    }
     setError(formErrors);
     console.log(formData);
   };

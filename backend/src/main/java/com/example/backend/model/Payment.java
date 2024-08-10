@@ -1,9 +1,13 @@
 package com.example.backend.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -11,6 +15,7 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Payment {
     @Id
+      @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int paymentId;
     private String name;
     private String cardNumber;
@@ -87,6 +92,7 @@ public class Payment {
     ///payment to order
     @OneToOne(mappedBy = "payment",cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
+    @JsonIgnore
     private Orders orders;
 
     public Orders getOrders() {
