@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/Login.css';
@@ -12,6 +13,7 @@ function Login() {
   const [error, setError] = useState({
     email: "",
     password: "",
+    general: "",
   });
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -19,7 +21,7 @@ function Login() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    setError({ ...error, [name]: "" });
+    setError({ ...error, [name]: "", general: "" });
   };
 
   const handleSubmit = async(event) => {
@@ -31,6 +33,12 @@ function Login() {
     if (formData.password.trim() === "") {
       formErrors.password = "Enter Password";
     }
+
+    if (Object.keys(formErrors).length > 0) {
+      setError(formErrors);
+      return;
+    }
+
     try {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/auth/authenticate",
@@ -43,13 +51,16 @@ function Login() {
       if (role === "ADMIN") {
         navigate("/admindashboard");
       } else {
-        navigate("/categories");
+        navigate("/userdashboard");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
+      if (err.response && err.response.status === 401) {
+        setError({ ...error, general: "Invalid email or password." });
+      } else {
+        setError({ ...error, general: "An unexpected error occurred. Please try again later." });
+      }
     }
-    setError(formErrors);
-    console.log(formData);
   };
 
   return (
@@ -74,8 +85,8 @@ function Login() {
             name="password"
             value={formData.password}
             onChange={handleChange}
-          /><br />
-          {error.password && <p className="error-message">{error.password}</p>}<br />
+          />
+          {error.password && <p className="error-message">{error.password}</p>}
           {error.general && <p className="error-message">{error.general}</p>}
           
           <p><a href="/forgot-password">Forgot Password?</a></p>
@@ -90,4 +101,3 @@ function Login() {
 }
 
 export default Login;
-

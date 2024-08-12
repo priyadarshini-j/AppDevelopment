@@ -1,172 +1,4 @@
 
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
-// import TotalUsers from './TotalUsers';
-// // import Orders from './Orders';
-// // import Chat from './Chat';
-// import BIChart from './BIChart';
-// import OrderDetails from './OrderDetails';
-// import '../assets/css/AdminDashboard.css';
-// import { useAuth } from './AuthContext';
-
-// function AdminDashboard() {
-//   const navigate = useNavigate();
-//   const { logout } = useAuth();
-//   const [activeComponent, setActiveComponent] = useState('totalusers'); // Manage active component
-
-//   const handleLogout = () => {
-//     logout();
-//     navigate('/login');
-//   };
-
-//   const renderComponent = () => {
-//     switch (activeComponent) {
-//       case 'totalusers':
-//         return <TotalUsers />;
-//       case 'bichart':
-//         return <BIChart />;
-//       case 'orderdetails':
-//         return <OrderDetails />;
-//       // Add more cases as needed
-//       default:
-//         return <TotalUsers/>;
-//     }
-//   };
-
-//   return (
-//     <div className="admin-dashboard">
-//       <div className="sidebar">
-//         <div className="admin-profile">
-//           <img src="https://cdn0.iconfinder.com/data/icons/woman-user-human-profile-business-person-avatar/100/06-1User_11-512.png" alt="Admin" className="admin-image" />
-//           <h2>Priyadharshini</h2>
-//         </div>
-//         <ul>
-//           <li><Link to="#" onClick={() => setActiveComponent('totalusers')}>Users List</Link></li>
-//           <li><Link to="#" onClick={() => setActiveComponent('bichart')}>Reports</Link></li>
-//           <li><Link to="#" onClick={() => setActiveComponent('orderdetails')}>Sales</Link></li>
-//         </ul>
-//         <button onClick={handleLogout} className="logout-button">Logout</button>
-//       </div>
-//       <div className="main-content">
-//         {renderComponent()}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AdminDashboard;
-
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import BIChart from './BIChart';
-// import OrderDetails from './OrderDetails';
-// import '../assets/css/AdminDashboard.css';
-// import { useAuth } from './AuthContext';
-
-// function AdminDashboard() {
-//   const navigate = useNavigate();
-//   const { logout } = useAuth();
-//   const [activeComponent, setActiveComponent] = useState('totalusers'); // Manage active component
-//   const [resData, setResData] = useState([]);
-
-//   // Fetch user data
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const token = localStorage.getItem("token");
-//         const config = {
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer ${token}`,
-//           },
-//         };
-//         const response = await axios.get(
-//           "http://127.0.0.1:8080/api/users/readUsers",
-//           config
-//         );
-//         setResData(response.data);
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   // Handle logout
-//   const handleLogout = () => {
-//     logout();
-//     localStorage.removeItem("token");
-//     navigate('/login', { replace: true });
-//     window.history.pushState(null, "", window.location.origin);
-//     window.addEventListener("popstate", function (event) {
-//       window.history.pushState(null, "", window.location.origin);
-//     });
-//     navigate("/login");
-//   };
-
-//   // Render components based on the active selection
-//   const renderComponent = () => {
-//     switch (activeComponent) {
-//       case 'totalusers':
-//         return (
-//           <div className="d-flex flex-wrap justify-content-center">
-//             {resData.map((item) => (
-//               <div key={item.id} className="card m-3" style={{ width: "18rem" }}>
-//                 <div className="card-body">
-//                   <h5 className="card-title">Name: {item.name}</h5>
-//                   <p className="card-text">Email: {item.email}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         );
-//       case 'bichart':
-//         return <BIChart />;
-//       case 'orderdetails':
-//         return <OrderDetails />;
-//       default:
-//         return (
-//           <div className="d-flex flex-wrap justify-content-center">
-//             {resData.map((item) => (
-//               <div key={item.id} className="card m-3" style={{ width: "18rem" }}>
-//                 <div className="card-body">
-//                   <h5 className="card-title">Name: {item.name}</h5>
-//                   <p className="card-text">Email: {item.email}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         );
-//     }
-//   };
-
-//   return (
-//     <div className="admin-dashboard">
-//       <div className="sidebar">
-//         <div className="admin-profile">
-//           <img src="https://cdn0.iconfinder.com/data/icons/woman-user-human-profile-business-person-avatar/100/06-1User_11-512.png" alt="Admin" className="admin-image" />
-//           <h2>Priyadharshini</h2>
-//         </div>
-//         <ul>
-//           <li><Link to="#" onClick={() => setActiveComponent('totalusers')}>Users List</Link></li>
-//           <li><Link to="#" onClick={() => setActiveComponent('bichart')}>Reports</Link></li>
-//           <li><Link to="#" onClick={() => setActiveComponent('orderdetails')}>Sales</Link></li>
-//         </ul>
-//         <button onClick={handleLogout} className="logout-button">Logout</button>
-//       </div>
-//       <div className="main-content">
-//         {renderComponent()}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AdminDashboard;
 
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -179,12 +11,11 @@ import { useAuth } from './AuthContext';
 function AdminDashboard() {
   const navigate = useNavigate();
   const { logout } = useAuth();
-  const [activeComponent, setActiveComponent] = useState('totalusers');
+  const [activeComponent, setActiveComponent] = useState('profile'); // Set default component to 'profile'
   const [resData, setResData] = useState([]);
-  const [profileData, setProfileData] = useState({});
-  const [isEditing, setIsEditing] = useState(false);
-  const [editForm, setEditForm] = useState({});
+  const [profile, setProfile] = useState(null); // State to hold profile data
 
+  // Fetch user data and profile
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -195,14 +26,13 @@ function AdminDashboard() {
             Authorization: `Bearer ${token}`,
           },
         };
-        const [userResponse, profileResponse] = await Promise.all([
-          axios.get("http://127.0.0.1:8080/api/users/readUsers", config),
-          axios.get("http://127.0.0.1:8080/api/users/profile", config)
-        ]);
+        // Fetch user data
+        const usersResponse = await axios.get("http://127.0.0.1:8080/api/users/readUsers", config);
+        setResData(usersResponse.data);
 
-        setResData(userResponse.data);
-        setProfileData(profileResponse.data);
-        setEditForm(profileResponse.data);
+        // Fetch profile data
+        const profileResponse = await axios.get("http://127.0.0.1:8080/api/users/readUsers", config);
+        setProfile(profileResponse.data);
 
       } catch (error) {
         console.error(error);
@@ -211,29 +41,21 @@ function AdminDashboard() {
     fetchData();
   }, []);
 
+  // Handle logout
   const handleLogout = () => {
     logout();
     localStorage.removeItem("token");
     navigate('/login', { replace: true });
-    window.history.pushState(null, "", window.location.origin);
-    window.addEventListener("popstate", function (event) {
-      window.history.pushState(null, "", window.location.origin);
-    });
-    navigate("/login");
   };
 
-  const toggleEdit = () => {
-    setIsEditing(!isEditing);
+  // Handle profile form changes and submission
+  const handleProfileChange = (event) => {
+    const { name, value } = event.target;
+    setProfile({ ...profile, [name]: value });
   };
 
-  const handleFormChange = (e) => {
-    setEditForm({
-      ...editForm,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleProfileUpdate = async () => {
+  const handleProfileSubmit = async (event) => {
+    event.preventDefault();
     try {
       const token = localStorage.getItem("token");
       const config = {
@@ -242,14 +64,15 @@ function AdminDashboard() {
           Authorization: `Bearer ${token}`,
         },
       };
-      await axios.put("http://127.0.0.1:8080/api/users/profile", editForm, config);
-      setProfileData(editForm);
-      setIsEditing(false);
+      await axios.put("http://127.0.0.1:8080/api/users/updateUser{email}", profile, config);
+      alert("Profile updated successfully!");
     } catch (error) {
-      console.error(error);
+      console.error("Profile update error:", error);
+      alert("Profile update failed. Please try again.");
     }
   };
 
+  // Render components based on the active selection
   const renderComponent = () => {
     switch (activeComponent) {
       case 'totalusers':
@@ -269,17 +92,40 @@ function AdminDashboard() {
         return <BIChart />;
       case 'orderdetails':
         return <OrderDetails />;
+      case 'profile':
       default:
         return (
-          <div className="d-flex flex-wrap justify-content-center">
-            {resData.map((item) => (
-              <div key={item.id} className="card m-3" style={{ width: "18rem" }}>
-                <div className="card-body">
-                  <h5 className="card-title">Name: {item.name}</h5>
-                  <p className="card-text">Email: {item.email}</p>
-                </div>
-              </div>
-            ))}
+          <div className="profile-edit">
+            <center>
+            <img src="https://cdn0.iconfinder.com/data/icons/woman-user-human-profile-business-person-avatar/100/06-1User_11-512.png" alt="Admin" className="admin-image" />
+            </center>
+            <form onSubmit={handleProfileSubmit}>
+              <label>Name:</label>
+              <input
+                type="text"
+                name="name"
+                value={profile?.name || ''}
+                onChange={handleProfileChange}
+              /><br /><br />
+
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={profile?.email || ''}
+                onChange={handleProfileChange}
+              /><br /><br />
+
+              <label>Password:</label>
+              <input
+                type="password"
+                name="password"
+                value={profile?.password || ''}
+                onChange={handleProfileChange}
+              /><br /><br />
+
+              <button type="submit">Update Profile</button>
+            </form>
           </div>
         );
     }
@@ -290,39 +136,14 @@ function AdminDashboard() {
       <div className="sidebar">
         <div className="admin-profile">
           <img src="https://cdn0.iconfinder.com/data/icons/woman-user-human-profile-business-person-avatar/100/06-1User_11-512.png" alt="Admin" className="admin-image" />
-          <div className="profile-container">
-            {isEditing ? (
-              <div className="edit-form">
-                <input
-                  type="text"
-                  name="name"
-                  value={editForm.name}
-                  onChange={handleFormChange}
-                  placeholder="Name"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={editForm.email}
-                  onChange={handleFormChange}
-                  placeholder="Email"
-                />
-                <button onClick={handleProfileUpdate}>Save</button>
-                <button onClick={toggleEdit}>Cancel</button>
-              </div>
-            ) : (
-              <div className="profile-details">
-                <h2>{profileData.name}</h2>
-                <p>{profileData.email}</p>
-                <button onClick={toggleEdit}>Edit Profile</button>
-              </div>
-            )}
-          </div>
+          <h5>{profile ? profile.name : "Loading..."}</h5>
+          <p>{profile ? profile.email : "Loading..."}</p>
         </div>
         <ul>
           <li><Link to="#" onClick={() => setActiveComponent('totalusers')}>Users List</Link></li>
           <li><Link to="#" onClick={() => setActiveComponent('bichart')}>Reports</Link></li>
           <li><Link to="#" onClick={() => setActiveComponent('orderdetails')}>Sales</Link></li>
+          <li><Link to="#" onClick={() => setActiveComponent('profile')}>Edit Profile</Link></li>
         </ul>
         <button onClick={handleLogout} className="logout-button">Logout</button>
       </div>

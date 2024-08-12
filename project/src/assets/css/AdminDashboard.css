@@ -74,5 +74,69 @@
     flex-grow: 1;
     padding: 20px;
   }
+  .profile-edit {
+    max-width: 600px;
+    margin: auto;
+  }
   
+  .profile-edit h1 {
+    color: #e91e63; /* Pink color for heading */
+    text-align: center;
+  }
+  
+  .profile-edit form {
+    background-color: #fdd7e4; /* Very light pink background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .profile-edit label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  
+  .profile-edit input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* User card container */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Card styling */
+.card {
+  background-color: #fce4ec; /* Very light pink background */
+  border: 1px solid #e91e63; /* Pink border */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  color: #e91e63; /* Pink color for card title */
+  font-weight: bold;
+}
+
+.card-text {
+  color: #333; /* Darker color for text */
+}
+
+/* Optional: Add hover effect */
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
   

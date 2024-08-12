@@ -81,7 +81,7 @@ const Categories = () => {
     setWishlist([...wishlist, toy]);
     alert(`Added ${toy.name} to wishlist!`);
   };
-
+   
   return (
     <div className="category-page">
       {toys.map(toy => (
