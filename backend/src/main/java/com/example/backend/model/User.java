@@ -74,10 +74,10 @@ public class User {
         this.roles = roles;
     }
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    @JsonManagedReference
-    @JsonIgnore
-    private List<Product> product=new ArrayList<>();
+    // @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    // @JsonManagedReference
+    // @JsonIgnore
+    // private List<Product> product=new ArrayList<>();
 
     // public List<Product> getOrderdata() {
     //     return product;

@@ -53,19 +53,19 @@ public class Feedback {
    
 
 
-    //   // Mapping to product
-     @OneToOne
-    @JsonBackReference
-    @JoinColumn(name = "product_id", referencedColumnName = "productId", nullable = false)
-    private Product product;
+//     //   // Mapping to product
+//      @OneToOne
+//     @JsonBackReference
+//     @JoinColumn(name = "product_id", referencedColumnName = "productId", nullable = false)
+//     private Product product;
 
-public Product getProduct() {
-    return product;
-}
+// public Product getProduct() {
+//     return product;
+// }
 
-public void setProduct(Product product) {
-    this.product = product;
-}
+// public void setProduct(Product product) {
+//     this.product = product;
+// }
     
 
 

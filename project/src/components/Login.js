@@ -51,7 +51,7 @@ function Login() {
       if (role === "ADMIN") {
         navigate("/admindashboard");
       } else {
-        navigate("/userdashboard");
+        navigate("/categories");
       }
     } catch (err) {
       console.error(err);

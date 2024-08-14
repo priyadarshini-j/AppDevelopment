@@ -1,10 +1,13 @@
 package com.example.backend.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.backend.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
+@Repository
 public interface ProductRepo extends JpaRepository<Product, Integer> {
-    // Custom query method to find products by category
+    List<Product> findByImageUrl(String imageUrl);
     List<Product> findByCategory(String category);
 }

@@ -1,90 +1,8 @@
-// import React, { useState } from 'react';
-// import '../assets/css/Feedback.css';
 
-// const FeedbackForm = () => {
-//   const [formData, setFormData] = useState({
-//     rating: '',
-//     description: '',
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
-//   };
-
-//   const handleRating = (rate) => {
-//     setFormData({
-//       ...formData,
-//       rating: rate,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log('Feedback submitted:', formData);
-//     alert('Feedback submitted successfully!');
-//     window.location.href="/";
-//     // Here you can add the logic to send the feedback to the backend or API
-//     setFormData({
-//       rating: '',
-//       description: '',
-//     });
-//   };
-
-//   return (
-//     <div className="feedback-form-container">
-//       <h2>Feedback Form</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div className="form-group">
-//           <label htmlFor="rating">Rating:</label>
-//           <div className="rating-stars">
-//             {[1, 2, 3, 4, 5].map((star) => (
-//               <span
-//                 key={star}
-//                 className={`star ${star <= formData.rating ? 'filled' : ''}`}
-//                 onClick={() => handleRating(star)}
-//                 style={{ cursor: 'pointer', color: star <= formData.rating ? 'gold' : 'gray' }}
-//               >
-//                 ★
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="description">Description:</label>
-//           <select
-//             id="description"
-//             name="description"
-//             value={formData.description}
-//             onChange={handleChange}
-//             required
-//           >
-//             <option value="">Select a description</option>
-//             <option value="Great quality, very satisfied">Great quality, very satisfied</option>
-//             <option value="Good value for the price">Good value for the price</option>
-//             <option value="Item arrived on time">Item arrived on time</option>
-//             <option value="Could be improved">Could be improved</option>
-//             <option value="Not as expected">Not as expected</option>
-//           </select>
-//         </div>
-//         <button type="submit" className="submit-button">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FeedbackForm;
-
-
-
-
-
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import '../assets/css/Feedback.css';
+import { useNavigate } from 'react-router-dom';
 
 const FeedbackForm = () => {
   const [formData, setFormData] = useState({
@@ -98,6 +16,15 @@ const FeedbackForm = () => {
     general: '',
   });
 
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+  }, [token, navigate]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -105,14 +32,6 @@ const FeedbackForm = () => {
       [name]: value,
     });
     setError({ ...error, [name]: "", general: "" });
-  };
-
-  const handleRating = (rate) => {
-    setFormData({
-      ...formData,
-      rating: rate,
-    });
-    setError({ ...error, rating: "", general: "" });
   };
 
   const handleSubmit = async (e) => {
@@ -123,7 +42,7 @@ const FeedbackForm = () => {
       formErrors.rating = "Please provide a rating.";
     }
     if (!formData.description) {
-      formErrors.description = "Please select a description.";
+      formErrors.description = "Please provide a description.";
     }
 
     if (Object.keys(formErrors).length > 0) {
@@ -133,12 +52,18 @@ const FeedbackForm = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8080/api/feedback", // Replace with your actual API URL
-        formData
+        "http://127.0.0.1:8080/api/feedback",
+        formData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       console.log('Feedback submitted:', response.data);
       alert('Feedback submitted successfully!');
-      window.location.href = "/";
+      navigate("/");
     } catch (err) {
       console.error(err);
       setError({ ...error, general: "An unexpected error occurred. Please try again later." });
@@ -151,38 +76,36 @@ const FeedbackForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="rating">Rating:</label>
-          <div className="rating-stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={`star ${star <= formData.rating ? 'filled' : ''}`}
-                onClick={() => handleRating(star)}
-                style={{ cursor: 'pointer', color: star <= formData.rating ? 'gold' : 'gray' }}
-              >
-                ★
-              </span>
-            ))}
-          </div>
+          <select
+            id="rating"
+            name="rating"
+            value={formData.rating}
+            onChange={handleChange}
+            className={error.rating ? 'input-error' : ''}
+          >
+            <option value="">Select Rating</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
           {error.rating && <p className="error-message">{error.rating}</p>}
         </div>
+
         <div className="form-group">
           <label htmlFor="description">Description:</label>
-          <select
+          <textarea
             id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
-            required
-          >
-            <option value="">Select a description</option>
-            <option value="Great quality, very satisfied">Great quality, very satisfied</option>
-            <option value="Good value for the price">Good value for the price</option>
-            <option value="Item arrived on time">Item arrived on time</option>
-            <option value="Could be improved">Could be improved</option>
-            <option value="Not as expected">Not as expected</option>
-          </select>
+            className={error.description ? 'input-error' : ''}
+            placeholder="Write your feedback here..."
+          />
           {error.description && <p className="error-message">{error.description}</p>}
         </div>
+
         {error.general && <p className="error-message">{error.general}</p>}
         <button type="submit" className="submit-button">Submit</button>
       </form>
@@ -191,4 +114,3 @@ const FeedbackForm = () => {
 };
 
 export default FeedbackForm;
-

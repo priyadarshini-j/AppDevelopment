@@ -1,47 +1,32 @@
 package com.example.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Buy {
+    
     @Id
-      @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int aid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer aid;
+
     private String name;
     private String mobile;
     private String pincode;
     private String address;
     private String city;
     private String state;
+    private String email; // Add this field
 
-    public Buy() {
-    }
+    // Getters and Setters
 
-    public Buy(int aid, String name, String mobile, String pincode, String address, String city, String state) {
-        this.aid = aid;
-        this.name = name;
-        this.mobile = mobile;
-        this.pincode = pincode;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-    }
-
-    public int getAid() {
+    public Integer getAid() {
         return aid;
     }
 
-    public void setAid(int aid) {
+    public void setAid(Integer aid) {
         this.aid = aid;
     }
 
@@ -92,34 +77,12 @@ public class Buy {
     public void setState(String state) {
         this.state = state;
     }
-    //product to buy
-   @OneToOne
-    @JsonBackReference
-    @JoinColumn(name = "product_id", referencedColumnName = "productId", nullable = false)
-    private Product product;
 
-public Product getProduct() {
-    return product;
-}
+    public String getEmail() {
+        return email;
+    }
 
-public void setProduct(Product product) {
-    this.product = product;
-}
-
-        // Buy to Payment relationship
-        @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)
-        @JsonManagedReference
-        @JsonIgnore
-        private Payment payment;
-    
-        public Payment getPayment() {
-            return payment;
-        }
-    
-        public void setPayment(Payment payment) {
-            this.payment = payment;
-        }
-    
-
-    
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

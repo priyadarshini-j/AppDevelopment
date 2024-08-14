@@ -19,7 +19,7 @@ public class ProductController {
 
     // Create a new product
     @PostMapping
-    @PreAuthorize( "hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         Product createdProduct = productService.create(product);
         return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
@@ -29,10 +29,12 @@ public class ProductController {
     @GetMapping
     @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
    
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productService.getAll();
-        return new ResponseEntity<>(products, HttpStatus.OK);
-    }
+    public List<Product> getProducts() {
+    List<Product> products = productService.getAllProducts();
+    System.out.println("Fetched products: " + products); // Debug log
+    return products;
+}
+
 
     // Get a product by ID
     @GetMapping("/{productId}")
@@ -47,9 +49,8 @@ public class ProductController {
     }
 
     // Update a product
-    @PutMapping("/{productId}")   
+    @PutMapping("/{productId}")
     @PreAuthorize("hasAuthority('ADMIN')")
-
     public ResponseEntity<Product> updateProduct(@PathVariable("productId") int productId, @RequestBody Product product) {
         boolean isUpdated = productService.update(productId, product);
         if (isUpdated) {
@@ -58,6 +59,16 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    //new
+    @PostMapping("/category/{category}")
+@PreAuthorize("hasAuthority('ADMIN')")
+public ResponseEntity<Product> createProductByCategory(@PathVariable("category") String category, @RequestBody Product product) {
+    product.setCategory(category); // Set the category
+    Product createdProduct = productService.create(product);
+    return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
+}
+
+
 
     // Delete a product
     @DeleteMapping("/{productId}")
@@ -71,15 +82,29 @@ public class ProductController {
         }
     }
 
-    // Get products by category
-    @GetMapping("/category/{category}")
+    // Get products by image URL (if required)
+    // Since there is no category, this endpoint is optional
+    // Adjust or remove this method as needed
+    @GetMapping("/image/{imageUrl}")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
-    public ResponseEntity<List<Product>> getProductsByCategory(@PathVariable("category") String category) {
-        List<Product> products = productService.getByCategory(category);
+    public ResponseEntity<List<Product>> getProductsByImage(@PathVariable("imageUrl") String imageUrl) {
+        List<Product> products = productService.getByImageUrl(imageUrl);
         if (!products.isEmpty()) {
             return new ResponseEntity<>(products, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    //
+    @GetMapping("/category/{category}")
+@PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
+public ResponseEntity<List<Product>> getProductsByCategory(@PathVariable("category") String category) {
+    List<Product> products = productService.getProductsByCategory(category);
+    if (!products.isEmpty()) {
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    } else {
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+}
+
 }

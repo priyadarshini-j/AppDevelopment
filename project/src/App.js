@@ -25,6 +25,7 @@ import AddressPage from './components/AddressPage';
 import {WishlistProvider} from './components/WishlistContext';
 import OrderDetail from './components/OrderDetail';
 import DeliveryTracking from './components/DeliveryTracking';
+import ProductForm from './components/ProductForm';
 
 
 const App = () => {
@@ -55,6 +56,8 @@ const App = () => {
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/orderdetail" element={<OrderDetail />} />
         <Route path="/deliverytracking" element={<DeliveryTracking />} />
+        <Route path="/productform" element={<ProductForm />} />
+
         
       </Routes>
       

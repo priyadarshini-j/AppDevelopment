@@ -1,13 +1,14 @@
+
+
 import React, { useState } from 'react';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { useCart } from '../components/CartContext'; // Adjust the path as necessary
 import { useAuth } from '../components/AuthContext'; // Adjust the path as necessary
 import { useWishlist } from '../components/WishlistContext'; // Adjust the path as necessary
-import '../assets/css/ToyCard.css'; // Adjust the path as necessary
+import '../assets/css/ToyCard.css'; // Ensure the CSS file is correctly placed
 
-const ToyCard = ({ toy }) => {
-  const { addToCart } = useCart();
+const ToyCard = ({ toy, onAddToCart, onAddToWishlist }) => {
   const { isLoggedIn } = useAuth();
   const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist();
   const [isInWishlist, setIsInWishlist] = useState(
@@ -24,7 +25,7 @@ const ToyCard = ({ toy }) => {
   };
 
   const handleAddToCart = () => {
-    addToCart(toy);
+    onAddToCart(toy);
     alert('Item added to cart');
   };
 
@@ -33,6 +34,7 @@ const ToyCard = ({ toy }) => {
       removeFromWishlist(toy.id);
     } else {
       addToWishlist(toy);
+      onAddToWishlist(toy); // Add to parent component wishlist state
     }
     setIsInWishlist(!isInWishlist);
   };
@@ -45,16 +47,16 @@ const ToyCard = ({ toy }) => {
           onClick={handleAddToWishlist} 
         />
       </div>
-      <img src={toy.image} alt={toy.name} className="toy-image" />
-      <h3>{toy.name}</h3>
+      <img src={toy.imageUrl} alt={toy.productName} className="toy-image" />
+      <h3>{toy.productName}</h3>
       <p>{toy.description}</p>
       <div className="rating">
         {[...Array(5)].map((star, index) => (
-          <FaStar key={index} color={index < toy.rating ? "#ffc107" : "#e4e5e9"} />
+          <FaStar key={index} color={index < toy.rating ? "#ffc107" : "#ffc107"} />
         ))}
         <span>{toy.rating}</span>
       </div>
-      <p className="price">${toy.price}</p>
+      <p className="price">${toy.productPrice}</p>
       <div className="toy-actions">
         <button className="buy-now-btn" onClick={handleBuyNow}>Buy Now</button>
         <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
@@ -71,7 +73,9 @@ ToyCard.propTypes = {
     image: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
+  onAddToWishlist: PropTypes.func.isRequired
 };
 
 export default ToyCard;
