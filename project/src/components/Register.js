@@ -62,7 +62,7 @@ function Register() {
         name: formData.name,
         email: formData.email,
         password: formData.password,
-        roles: "ADMIN",
+        roles: "USER",
       });
 
       if (response.status === 201 || response.status === 200) {
