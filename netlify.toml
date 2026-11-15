@@ -1,0 +1,14 @@
+[build]
+  base = "project"
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # Create React App fails CI builds on lint warnings when CI=true
+  CI = "false"
+
+# Single-page app: serve index.html for client-side routes (React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
